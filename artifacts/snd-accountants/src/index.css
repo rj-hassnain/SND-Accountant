@@ -422,7 +422,7 @@ a { color: inherit; }
 .process-card h3 { font: 600 23px/1.2 var(--app-font-serif); margin: 0 0 12px; }
 .process-card p { max-width: 300px; margin: 0; color: #667386; font-size: 13px; line-height: 1.7; }
 
-.reveal-on-scroll { opacity: 0; transform: translateY(14px); transition: opacity .62s ease var(--reveal-delay, 0ms), transform .62s ease var(--reveal-delay, 0ms); }
+.reveal-on-scroll { opacity: 1; transform: translateY(8px); transition: transform .62s ease var(--reveal-delay, 0ms); }
 .reveal-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
 
 .consult-banner { padding: 82px 0; background: #dff1f4; position: relative; }

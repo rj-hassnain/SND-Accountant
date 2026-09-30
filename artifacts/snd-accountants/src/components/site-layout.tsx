@@ -18,6 +18,8 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     let anchorTimeout: number | undefined;
     if (window.location.hash === '#about') {
       anchorTimeout = window.setTimeout(() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }), 100);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'auto' });
     }
     const revealTargets = Array.from(document.querySelectorAll<HTMLElement>('main > section, main section.catalog-section, main .contact-grid'));
     const observer = typeof IntersectionObserver === 'undefined'
