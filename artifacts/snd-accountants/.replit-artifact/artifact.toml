@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "SND Accountants Website Redesign"
+description = "A premium responsive website redesign demo for SND Accountants & Business Consultants, with Home, Services, and Contact pages using the firm's verified services and contact information."
+version = "1.0.0"
+id = "artifacts/snd-accountants"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24837
+
+[services.development]
+run = "pnpm --filter @workspace/snd-accountants run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/snd-accountants", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/snd-accountants/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24837"
+BASE_PATH = "/"
